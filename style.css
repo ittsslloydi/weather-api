@@ -1,0 +1,255 @@
+:root {
+  --accent: #fdd835;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1a237e, #0b0f1a);
+  color: #e8eaed;
+  transition: background 0.6s ease, color 0.4s ease;
+}
+
+/* LIGHT MODE */
+body.light {
+  background: linear-gradient(180deg, #f4f7fb, #e9eef5);
+  color: #111827;
+}
+
+/* ensure text visibility in light mode */
+body.light p,
+body.light span,
+body.light div,
+body.light h1,
+body.light h2,
+body.light h3 {
+  color: #111827;
+}
+
+/* APP */
+.app {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+/* CONTROLS */
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.controls input,
+.controls select,
+.controls button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.controls button {
+  background: #1a73e8;
+  color: white;
+  cursor: pointer;
+}
+
+body.light .controls button {
+  background: #2563eb;
+}
+
+body.light input,
+body.light select {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
+}
+
+/* STATUS (WAS MISSING) */
+#status {
+  font-size: 14px;
+  color: #9aa0a6;
+  margin-top: 10px;
+}
+
+body.light #status {
+  color: #4b5563;
+}
+
+/* SUMMARY */
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.summary-left {
+  display: flex;
+  gap: 16px;
+}
+
+.big-icon {
+  font-size: 56px;
+}
+
+.big-temp {
+  font-size: 64px;
+}
+
+.meta {
+  font-size: 14px;
+  color: #9aa0a6;
+}
+
+body.light .meta {
+  color: #374151;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.tabs span {
+  cursor: pointer;
+  color: #9aa0a6;
+  padding-bottom: 6px;
+}
+
+body.light .tabs span {
+  color: #6b7280;
+}
+
+.tabs span.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* HOURLY GRAPH */
+.graph {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+body.light .graph {
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* REQUIRED GRID */
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 14px;
+}
+
+.chart-item {
+  text-align: center;
+  font-size: 13px;
+  animation: fadeUp 0.4s ease;
+}
+
+.chart-value {
+  font-weight: bold;
+}
+
+/* TEMP */
+.temp-line {
+  height: 4px;
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+/* RAIN */
+.rain-bar {
+  height: 60px;
+  background: rgba(138, 180, 248, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.rain-fill {
+  width: 100%;
+  background: #8ab4f8;
+}
+
+/* WIND */
+.wind-arrow {
+  font-size: 22px;
+}
+
+/* DAYS */
+.days {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.day {
+  flex: 1;
+  background: #2a2b2f;
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.day.active {
+  border: 1px solid var(--accent);
+}
+
+body.light .day,
+body.light .box {
+  background: #ffffff;
+  color: #111827;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ANALYTICS */
+.analytics {
+  margin-top: 40px;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.box {
+  background: #2a2b2f;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+body.light footer {
+  color: #4b5563;
+}
+
+/* ANIMATION (WAS MISSING) */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

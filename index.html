@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5-Day Weather Analytics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header>
+    <h1>5-Day Weather Analytics</h1>
+
+    <div class="controls">
+      <input id="cityInput" placeholder="Enter city (Worldwide)">
+      <select id="unitSelect">
+        <option value="metric">Celsius (°C)</option>
+        <option value="imperial">Fahrenheit (°F)</option>
+      </select>
+
+      <button id="searchBtn">Search</button>
+      <button id="locBtn">📍 Locate Me</button>
+      <button id="themeToggle">🌙</button>
+
+      <select id="palettePicker">
+        <option value="#fdd835">Yellow</option>
+        <option value="#2563eb">Blue</option>
+        <option value="#10b981">Green</option>
+        <option value="#ec4899">Pink</option>
+      </select>
+    </div>
+
+    <p id="status">Ready</p>
+  </header>
+
+  <section class="summary">
+    <div class="summary-left">
+      <div id="mainIcon" class="big-icon">☁️</div>
+      <div>
+        <div id="mainTemp" class="big-temp">--°</div>
+        <div id="mainMeta" class="meta"></div>
+      </div>
+    </div>
+
+    <div class="summary-right">
+      <h2>Weather</h2>
+      <p id="locationName"></p>
+      <p id="rightDate"></p>
+      <p id="rightDesc"></p>
+    </div>
+  </section>
+
+  <nav class="tabs">
+    <span class="active" data-type="temp">Temperature</span>
+    <span data-type="rain">Precipitation</span>
+    <span data-type="wind">Wind</span>
+  </nav>
+
+  <section class="graph">
+    <div id="chartContent" class="chart-grid"></div>
+  </section>
+
+  <section id="days" class="days"></section>
+
+  <section class="analytics">
+    <h2>Weather Data Analytics</h2>
+    <div class="analytics-grid">
+      <div class="box" id="tempStats"></div>
+      <div class="box" id="humidityStats"></div>
+      <div class="box" id="rainStats"></div>
+      <div class="box" id="trendStats"></div>
+    </div>
+  </section>
+
+  <footer>Data from OpenWeatherMap API</footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
